@@ -1,0 +1,34 @@
+# norootforbuild
+
+Name:           printscreen
+Version:        1.4
+Release:        0
+License:        BSD-2-Clause
+Summary:        Simple screenshot program for X11
+Url:            http://svnweb.freebsd.org/ports/head/x11/printscreen/
+Group:          Development/Tools/Other
+#Source:         %{url}/files/printscreen.in?revision=268377&view=co
+Source:         printscreen.in
+Requires:       xwd
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+
+%description
+Simple screenshot program for X11.
+
+%prep
+
+%build
+
+%check
+
+%install
+install -m 755 printscreen.in "%{buildroot}%{_bindir}/printscreen"
+
+%clean
+%__rm -rf "%{buildroot}"
+
+%files
+%defattr(-,root,root)
+%{_bindir}/printscreen
+
+%changelog
