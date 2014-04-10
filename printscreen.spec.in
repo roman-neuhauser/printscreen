@@ -1,35 +1,40 @@
 # norootforbuild
 
 Name:           printscreen
-Version:        1.4
+Version:        __VERSION__
 Release:        0
 License:        BSD-2-Clause
 Summary:        Simple screenshot program for X11
-Url:            http://svnweb.freebsd.org/ports/head/x11/printscreen/
+Url:            https://github.com/roman-neuhauser/%{name}
 Group:          Development/Tools/Other
-#Source:         %{url}/files/printscreen.in?revision=268377&view=co
-Source:         printscreen.in
+Source:         %{name}-%{version}.tar.gz
 Requires:       netpbm
 Requires:       xwd
+BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 Simple screenshot program for X11.
 
+%define printscreen_make make PREFIX="%{_prefix}" MANDIR="%{_mandir}"
+
 %prep
+%setup
 
 %build
+%printscreen_make
 
 %check
 
 %install
-install -m 755 printscreen.in "%{buildroot}%{_bindir}/printscreen"
+%printscreen_make install DESTDIR="%{buildroot}"
 
 %clean
 %__rm -rf "%{buildroot}"
 
 %files
 %defattr(-,root,root)
-%{_bindir}/printscreen
+%{_bindir}/%{name}
+%{_mandir}/man1/%{name}.1.gz
 
 %changelog
