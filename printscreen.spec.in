@@ -9,6 +9,7 @@ Url:            http://svnweb.freebsd.org/ports/head/x11/printscreen/
 Group:          Development/Tools/Other
 #Source:         %{url}/files/printscreen.in?revision=268377&view=co
 Source:         printscreen.in
+Requires:       netpbm
 Requires:       xwd
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
