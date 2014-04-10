@@ -1,0 +1,119 @@
+.\" This document is in the public domain.
+.\" vim: fdm=marker
+.
+.\" FRONT MATTER {{{
+.Dd Jul 16, 2012
+.Os
+.Dt PRINTSCREEN 1
+.
+.Sh NAME
+.Nm printscreen
+.Nd Simple screenshot tool
+.\" FRONT MATTER }}}
+.
+.\" SYNOPSIS {{{
+.Sh SYNOPSIS
+.Nm
+.Fl h
+.Nm
+.Op Fl b
+.Op Fl d Ar DELAY
+.Op Fl f Ar OUTFMT
+.Op Fl l
+.Op Fl q
+.Op Fl s
+.Op Ar OUTFILE
+.\" SYNOPSIS }}}
+.
+.\" DESCRIPTION {{{
+.Sh DESCRIPTION
+.Nm
+is a simple command line tool for taking screenshots of X windows.
+.Pp
+.
+.Bl -tag -width "xx"
+.It Fl h
+Display a usage description.
+.
+.It Fl b
+When selecting a window, grab wm border too.
+.
+.It Fl d Ar DELAY
+Wait
+.Ar DELAY
+seconds before taking a shot.
+.
+.It Fl f Ar OUTFMT
+Produce an image in
+.Ar OUTFMT
+format.
+.
+.It Fl l
+List output formats.
+.
+.It Fl q
+Be silent.
+.
+.It Fl s
+Select the window to capture interactively.
+.
+.It Ar OUTFILE
+Save the screenshot as
+.Ar OUTFILE .
+.
+.El
+.
+.\" DESCRIPTION }}}
+.\" .Sh IMPLEMENTATION NOTES
+.\" ENVIRONMENT {{{
+.Sh ENVIRONMENT
+.Nm
+uses
+.Ev HOME ,
+.Ev PATH .
+.\" ENVIRONMENT }}}
+.\" FILES {{{
+.Sh FILES
+.Nm
+stores screenshots in
+.Pa ~/.screenshots
+by default.
+.\" FILES }}}
+.\" EXAMPLES {{{
+.\" .Sh EXAMPLES
+.\" EXAMPLES }}}
+.\" DIAGNOSTICS {{{
+.Sh DIAGNOSTICS
+.Nm
+exits with
+.Li 0
+on success, and with
+.Li >0
+otherwise.
+.\" DIAGNOSTICS }}}
+.\" .Sh COMPATIBILITY
+.\" SEE ALSO {{{
+.Sh SEE ALSO
+.Xr xwd 1 ,
+.Xr netpbm 1 .
+.\" SEE ALSO }}}
+.\" .Sh STANDARDS
+.\" .Sh HISTORY
+.\" AUTHORS {{{
+.Sh AUTHORS
+.
+.Nm
+is based on the
+.Pa x11/printscreen
+package in FreeBSD
+written by
+.An "Alex Kozlov" Aq ak@FreeBSD.org .
+This manual page was written by
+.An "Roman Neuhauser" Aq neuhauser@sigpipe.cz .
+.\" AUTHORS }}}
+.\" BUGS {{{
+.Sh BUGS
+No doubt plentiful.
+Please report them at
+.Aq https://github.com/roman-neuhauser/printscreen/issues .
+.\" BUGS }}}
