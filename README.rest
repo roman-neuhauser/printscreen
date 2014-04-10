@@ -1,0 +1,65 @@
+.. vim: ft=rst sts=2 sw=2 tw=75
+.. default-role:: strong
+
+.. This file is marked up using reStructuredText.
+   Lines beginning with ".." are reST directives.
+   "foo_" or "`foo bar`_" is a link, defined at ".. _foo" or
+   ".. _foo bar".
+   "::" introduces a literal block (usually some form of code).
+   "`foo`" is some kind of identifier.
+   Suspicious backslashes in the text ("`std::string`\s") are required
+   for reST to recognize the preceding character as syntax.
+
+.. parsed-literal::
+
+  `NAME`
+      `printscreen` — Simple screenshot tool
+
+  `SYNOPSIS`
+      `printscreen` -h
+      `printscreen` [-b] [-d *DELAY*] [-f *OUTFMT*] [-l] [-q] [-s] [*OUTFILE*]
+
+  `DESCRIPTION`
+      `printscreen` is a simple command line tool for taking screenshots
+      of X windows.
+
+      `-h`  Display a usage description.
+
+      `-b`  When selecting a window, grab wm border too.
+
+      `-d` *DELAY*
+          Wait *DELAY* seconds before taking a shot.
+
+      `-f` *OUTFMT*
+          Produce an image in *OUTFMT* format.
+
+      `-l`  List output formats.
+
+      `-q`  Be silent.
+
+      `-s`  Select the window to capture interactively.
+
+      *OUTFILE*
+          Save the screenshot as *OUTFILE*.
+
+  `ENVIRONMENT`
+      `printscreen` uses `HOME`, `PATH`.
+
+  `FILES`
+      `printscreen` stores screenshots in *~/.screenshots* by default.
+
+  `DIAGNOSTICS`
+      `printscreen` exits with 0 on success, and with >0 otherwise.
+
+  `SEE ALSO`
+      xwd(1), netpbm(1).
+
+  `AUTHORS`
+      `printscreen` is based on the x11/printscreen package in FreeBSD
+      written by Alex Kozlov <ak@FreeBSD.org>.
+      This manual page was written by Roman Neuhauser <neuhauser@sigpipe.cz>.
+
+  `BUGS`
+      No doubt plentiful.  Please report them at
+      <https://github.com/roman-neuhauser/printscreen/issues>.
+
